@@ -18,15 +18,28 @@
 <body>
 
     <div id="title"> <!-- Contains the rules of the game and configuration input fields -->
-
+        <h1>Help the bear escape the bees</h1>
+        <p>Bear tried to avoid being stung by <input type="text" id="nbBees" value="1" size="3"> bees by running and jumping. The objective is to have as less stings as possible!</p>
+        <p>You can adjust the bees' speed <input type="text" id="periodTimer" value="10" size="3"> px/ms
+        <br> and the refresh period <input type="text" id="periodTimer" value="10" size="3"> ms </p>
+        <h2>Press <kbd>left</kbd>, <kbd>right</kbd>, <kbd>up</kbd>, <kbd>down</kbd> keys to move the bear</h2>
     </div>
 
     <div id="scores"> <!-- Shows the number of stings and the best duration -->
-
+        <table>
+            <tr>
+                <td>
+                    <p>Stings: [<span id="hits">0</span>]</p>
+                </td>
+                <td>
+                    <p>Best duration: [<span id="duration">?</span>]</p>
+                </td>
+            </tr>
+        </table>
     </div>
 
     <div id="board"> <!-- Contains the bear image and the bee image -->
-
+        <img src="./images/bear.gif" id="bear" alt="bear">
     </div>
 </body>
 </html>
