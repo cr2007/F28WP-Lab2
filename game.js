@@ -19,5 +19,9 @@ function Bear() {
         this.htmlElement.style.top = this.y + "px";
         this.htmlElement.style.display = "block";
     }
+}
 
+function start() {
+    //Creates bear
+    bear = new Bear();
 }
