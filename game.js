@@ -147,3 +147,9 @@ function createBeeImg(wNum) {
     //Returns back the img object
     return img;
 }
+
+
+function getRandomInt(max) {
+    // Returns a random value between 0 (inclusive) and the 'max' variable (inclusive)
+    return Math.floor(Math.random() * (max - 0 + 1) + min);
+}
