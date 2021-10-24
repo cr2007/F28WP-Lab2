@@ -24,4 +24,8 @@ function Bear() {
 function start() {
     //Creates bear
     bear = new Bear();
+    
+    //Add an event listener to the keypress event
+    document.getEventListener("keydown", moveBear, false);
 }
+
