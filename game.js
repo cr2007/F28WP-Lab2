@@ -148,8 +148,30 @@ function createBeeImg(wNum) {
     return img;
 }
 
-
+/* Function to generate and return a random integer between 0 and max */
 function getRandomInt(max) {
     // Returns a random value between 0 (inclusive) and the 'max' variable (inclusive)
     return Math.floor(Math.random() * (max - 0 + 1) + min);
+}
+
+function makeBees() {
+    //Get the number of bees specified by the user
+    let nbBees = document.getElementById("nbBees").value;
+    nbBees = Number(nbBees); // Converting the content of the input to a numeric value
+
+    if(isNaN(nbBees)) {
+        window.alert("Invalid number of bees");
+        return;
+    }
+
+    // Create the Bees
+    let i = 1;
+    while (i <= nbBees) {
+        var num = i;
+        var bee = new Bee(num); //Creates the object and its IMG element
+
+        bee.display(); //Displays the bees
+        bees.push(bee); //Add the Bee object to the Bees Array
+        i++;
+    }
 }
