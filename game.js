@@ -128,9 +128,9 @@ function createBeeImg(wNum) {
 
     //create the IMG element
     let img = document.createElement("img");
-    img.setAttribute("src", "images/bee.gif");
-    img.setAttribute("width", "100");
-    img.setAttribute("alt", "A bee!");
+    img.setAttribute("src", "images/bee.gif"); //Sets the source of the <img> tag
+    img.setAttribute("width", "100"); //Sets the width of the <img> tag
+    img.setAttribute("alt", "A bee!"); //Adds the alt text for the <img> tag
     img.setAttribute("id", "bee" + wNum);
     img.setAttribute("class", "bee"); //set class of html tag <img>
 
