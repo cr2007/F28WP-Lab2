@@ -29,6 +29,7 @@ function start() {
     document.getEventListener("keydown", moveBear, false);
 }
 
+// Function to limit the bear within the constraints of the board
 this.fitBounds = function() {
     let parent = this.htmlElement.parentElement;
     let iw = this.htmlElement.offsetWidth;
@@ -43,3 +44,5 @@ this.fitBounds = function() {
     if(this.y < 0) this.y = 0;
     if(this.y > h - ih) this.y = h - ih;
 };
+
+
