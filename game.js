@@ -27,6 +27,12 @@ function start() {
     
     //Add an event listener to the keypress event
     document.getEventListener("keydown", moveBear, false);
+
+    //Creates a new array for bees
+    bees = new Array();
+
+    //Creates the bees
+    makeBees();
 }
 
 // Function to limit the bear within the constraints of the board
