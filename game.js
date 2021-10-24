@@ -45,4 +45,10 @@ this.fitBounds = function() {
     if(this.y > h - ih) this.y = h - ih;
 };
 
+this.move = function(xDir, yDir){
+    this.fitBounds(); // Instruction to keep the bear within the board
+    this.x += this.dBear * xDir;
+    this.y += this.dBear * yDir;
+    this.display();
+};
 
