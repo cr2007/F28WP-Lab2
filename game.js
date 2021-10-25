@@ -35,6 +35,37 @@ function start() {
     makeBees();
 }
 
+/* Handles keyboard events
+*  to move the bear */
+
+function moveBear(e) {
+     //Codes of the four keys
+     const KEYUP = 38;
+     const KEYDOWN = 40;
+     const KEYLEFT = 37;
+     const KEYRIGHT = 39;
+
+     // Right Key
+     if(e.keyCode == KEYRIGHT) {
+         bear.move(1,0)
+     }
+
+     //Left Key
+     if(e.keyCode == KEYLEFT) {
+         bear.move(-1,0)
+     }
+
+     //Up Key
+     if(e.keyCode == KEYUP) {
+         bear.move(0, -1)
+     }
+
+     //Down Key
+     if(e.keyCode == KEYDOWN) {
+         bear.move(0,1)
+     }
+}
+
 // Function to limit the bear within the constraints of the board
 this.fitBounds = function() {
     let parent = this.htmlElement.parentElement;
