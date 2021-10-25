@@ -18,7 +18,7 @@ function Bear() {
         this.htmlElement.style.left = this.x + "px";
         this.htmlElement.style.top = this.y + "px";
         this.htmlElement.style.display = "block";
-    }
+    };
 }
 
 function start() {
