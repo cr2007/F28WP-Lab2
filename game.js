@@ -212,3 +212,17 @@ function makeBees() {
         i++;
     }
 }
+
+function moveBees() {
+    //Get speed input field value
+    let speed = document.getElementById("speedBees").value;
+
+    //Move each bee to a random location
+    for(let i = 0; i < bees.length; i++) {
+        let dx = getRandomInt(2 * speed) - speed;
+        let dy = getRandomInt(2 * speed) - speed;
+
+        bees[i].move(dx, dy);
+    }
+}
+
