@@ -238,3 +238,14 @@ function updateBees() {
     //Updates the timer for the next move
     updateTimer = setTimeout('updateBees()', period);
 }
+
+/* Methods to count the stings */
+
+function isHit(defender, offender) {
+    // Checks if the two images overlap
+    if(overlap(defender, offender)) {
+        let score = hits.innerHTML;
+        score = Number(score) + 1; // Increments the score
+        hits.innerHTML = score; // Displays the new score
+    }
+}
