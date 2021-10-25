@@ -249,3 +249,30 @@ function isHit(defender, offender) {
         hits.innerHTML = score; // Displays the new score
     }
 }
+
+function overlap(element1, element2) {
+    // Consider the two rectangles wrapping the two elements
+
+    // Rectangle of the first element
+    left1 = element1.htmlElement.offsetLeft;
+    top1 = element1.htmlElement.offsetTop;
+    right1 = element1.htmlElement.offsetLeft + element1.htmlElement.offsetWidth;
+    bottom1 = element1.htmlElement.offsetTop + element1.htmlElement.offsetHeight;
+
+    // Rectangle of the second element
+    left2 = element2.htmlElement.offsetLeft; // e2x
+    top2 = element2.htmlElement.offsetTop; //e2y
+    right2 = element2.htmlElement.offsetLeft + element2.htmlElement.offsetWidth;
+    bottom2 = element2.htmlElement.offsetTop + element2.htmlElement.offsetHeight;
+
+    // Calculating the intersection of the two rectangles
+    x_intersect = Math.max(0, Math.min(right1, right2) - Math.max(left1, left2));
+    y_intersect = Math.max(0, Math.min(bottom1, bottom2) - Math.max(top1, top2));
+    intersectArea = x_intersect * y_intersect;
+
+    // If intersection is nil (i.e. no hit)
+    if(intersectArea == 0 || isNaN(intersectArea)) {
+        return false;
+    }
+    return true;
+}
