@@ -223,6 +223,7 @@ function moveBees() {
         let dy = getRandomInt(2 * speed) - speed;
 
         bees[i].move(dx, dy);
+        isHit(bees[i], bear); // We add this to count strings
     }
 }
 
