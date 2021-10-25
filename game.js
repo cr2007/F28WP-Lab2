@@ -226,3 +226,15 @@ function moveBees() {
     }
 }
 
+
+//Updates the loop for the game
+function updateBees() {
+    //Move the bees randomly
+    moveBees();
+
+    //Uses a fixed update period
+    let period = 10;
+
+    //Updates the timer for the next move
+    updateTimer = setTimeout('updateBees()', period);
+}
