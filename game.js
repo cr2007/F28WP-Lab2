@@ -8,6 +8,7 @@ function Bear() {
     /* Function to move the bear by dx and dy steps
     *  in the horizontal and vertical directions */
     this.move = function(xDir, yDir){
+        this.fitBounds();
         this.x += this.dBear * xDir;
         this.y += this.dBear * yDir;
         this.display(); //Calls the display() function
@@ -15,9 +16,38 @@ function Bear() {
 
     // Function to display the bear at the new position 
     this.display = function() {
+        this.fitBounds();
         this.htmlElement.style.left = this.x + "px";
         this.htmlElement.style.top = this.y + "px";
         this.htmlElement.style.display = "block";
+    };
+
+    // Function to limit the bear within the constraints of the board
+    this.fitBounds = function() {
+        let parent = this.htmlElement.parentElement;
+        let iw = this.htmlElement.offsetWidth;
+        let ih = this.htmlElement.offsetHeight;
+        let l = parent.offsetLeft;
+        let t = parent.offsetTop;
+        let w = parent.offsetWidth;
+        let h = parent.offsetHeight;
+
+        if(this.x < 0) {
+            this.x = 0;
+            console.log(this.x)
+        }
+
+        if(this.x > w - iw) {
+            this.x = w - iw;
+        }
+
+        if(this.y < 0) {
+            this.y = 0;
+        }
+
+        if(this.y > h - ih) {
+            this.y = h - ih;
+        }
     };
 }
 
@@ -66,23 +96,7 @@ function moveBear(e) {
      }
 }
 
-// Function to limit the bear within the constraints of the board
-this.fitBounds = function() {
-    let parent = this.htmlElement.parentElement;
-    let iw = this.htmlElement.offsetWidth;
-    let ih = this.htmlElement.offsetHeight;
-    let l = parent.offsetLeft;
-    let t = parent.offsetTop;
-    let w = parent.offsetWidth;
-    let h = parent.offsetHeight;
-
-    if(this.x < 0) this.x = 0;
-    if(this.x > w - iw) this.x = w-iw;
-    if(this.y < 0) this.y = 0;
-    if(this.y > h - ih) this.y = h - ih;
-};
-
-this.move = function(xDir, yDir){
+this.move = function(xDir, yDir) {
     this.fitBounds(); // Instruction to keep the bear within the board
     this.x += this.dBear * xDir;
     this.y += this.dBear * yDir;
@@ -137,20 +151,23 @@ class Bee {
             let h = parent.offsetHeight;
 
             // Conditional Statement to prevent the bee from going below the minimum value of 'x'
-            if(this.x < 0) //Condition to check if the 'x' value goes below 0
+            if(this.x < 0) { //Condition to check if the 'x' value goes below 0
                 this.x = 0; // Changes the value of 'x' back to 0
+            }
             
             // Conditional Statement to prevent the bear from going below the maximum value
-            if(this.x > w - iw) // Condition to check if the value of x
+            if(this.x > w - iw) { // Condition to check if the value of x
                 this.x = w - iw;
+            }
 
             // Conditional Statement to prevent the bee from going below the minimum value of 'y'
-            if(this.y < 0)
-                this.y = 0
-            
+            if(this.y < 0) {
+                this.y = 0;
+            }
             // Conditional Statement to prevent the bee from going below the minimum value of 'y'
-            if(this.y > h - ih)
-                this.y = h - ih
+            if(this.y > h - ih) {
+                this.y = h - ih;
+            }
         };
     }
 }
