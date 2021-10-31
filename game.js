@@ -7,7 +7,7 @@ function Bear() {
 
     /* Function to move the bear by dx and dy steps
     *  in the horizontal and vertical directions */
-    this.move = function(xDir, yDir){
+    this.move = function(xDir, yDir) {
         this.fitBounds();
         this.x += this.dBear * xDir;
         this.y += this.dBear * yDir;
@@ -32,22 +32,11 @@ function Bear() {
         let w = parent.offsetWidth;
         let h = parent.offsetHeight;
 
-        if(this.x < 0) {
-            this.x = 0;
-            console.log(this.x)
-        }
+        if(this.x < 0) this.x = 0;
+        if(this.x > w - iw) this.x = w - iw;
 
-        if(this.x > w - iw) {
-            this.x = w - iw;
-        }
-
-        if(this.y < 0) {
-            this.y = 0;
-        }
-
-        if(this.y > h - ih) {
-            this.y = h - ih;
-        }
+        if(this.y < 0) this.y = 0;
+        if(this.y > h - ih) this.y = h - ih;
     };
 }
 
@@ -151,23 +140,19 @@ class Bee {
             let h = parent.offsetHeight;
 
             // Conditional Statement to prevent the bee from going below the minimum value of 'x'
-            if(this.x < 0) { //Condition to check if the 'x' value goes below 0
+            if(this.x < 0) //Condition to check if the 'x' value goes below 0
                 this.x = 0; // Changes the value of 'x' back to 0
-            }
             
             // Conditional Statement to prevent the bear from going below the maximum value
-            if(this.x > w - iw) { // Condition to check if the value of x
+            if(this.x > w - iw) // Condition to check if the value of x
                 this.x = w - iw;
-            }
 
             // Conditional Statement to prevent the bee from going below the minimum value of 'y'
-            if(this.y < 0) {
+            if(this.y < 0)
                 this.y = 0;
-            }
             // Conditional Statement to prevent the bee from going below the minimum value of 'y'
-            if(this.y > h - ih) {
+            if(this.y > h - ih)
                 this.y = h - ih;
-            }
         };
     }
 }
@@ -265,6 +250,18 @@ function isHit(defender, offender) {
         let score = hits.innerHTML;
         score = Number(score) + 1; // Increments the score
         hits.innerHTML = score; // Displays the new score
+
+        //Calculates the longest duration
+        let newStingTime = new Date();
+        let thisDuration = newStingTime - lastStingTime;
+        lastStingTime = newStingTime;
+        let longestDuration = Number(duration.innerHTML);
+        if(longestDuration === 0) {
+            longestDuration = thisDuration;
+        } else {
+            if(longestDuration < thisDuration) longestDuration = thisDuration;
+        }
+        document.getElementById("duration").innerHTML = longestDuration;
     }
 }
 
