@@ -11,7 +11,7 @@
     <a href="https://www.git-scm.com">
         <img alt="Git" title="Version Control System" src="https://img.shields.io/badge/Git-informational?style=flat-sqaure&logo=git&logoColor=white&color=F05032">
     </a>
-    <img alt="JavaScript" title="JavaScript" src="https://img.shields.io/badge/Visual Studio Code-informational?style=flat-sqaure&logo=visualstudiocode&logoColor=white&color=007ACC">
+    <img alt="JavaScript" title="JavaScript" src="https://img.shields.io/badge/Visual%20Studio%20Code-informational?style=flat-sqaure&logo=visualstudiocode&logoColor=white&color=007ACC">
 </div>
 
 ### Lab 2: JavaScript with DOM API
@@ -19,4 +19,4 @@
 The lab involved developing a simple (single player) game without any server interaction.<br>
 The game involves two characters competing on the game board, where one character moves randomly, and the other one is controlled by the user through keyboard keys
 
-This lab concentrated on the client-side programming using HTML, CSS, and JavaScript along with Objects, Arrays, and the <abbr title="Document Object Model"><b>DOM</b></abbr> API
+This lab concentrated on the client-side programming using <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, and JavaScript along with Objects, Arrays, and the <abbr title="Document Object Model"><b>DOM</b></abbr> API
