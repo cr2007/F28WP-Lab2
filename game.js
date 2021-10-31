@@ -52,6 +52,8 @@ function start() {
 
     //Creates the bees
     makeBees();
+
+    lastStingTime = new Date();
 }
 
 /* Handles keyboard events
