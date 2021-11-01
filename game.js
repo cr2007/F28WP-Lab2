@@ -242,7 +242,7 @@ function updateBees() {
     moveBees();
 
     //Uses a fixed update period
-    let period = 10;
+    let period = document.getElementById("periodTimer").value;
 
     //Updates the timer for the next move
     updateTimer = setTimeout('updateBees()', period);
@@ -251,6 +251,7 @@ function updateBees() {
 /* Methods to count the stings */
 
 function isHit(defender, offender) {
+
     // Checks if the two images overlap
     if(overlap(defender, offender)) {
         let score = hits.innerHTML;
