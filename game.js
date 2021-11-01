@@ -244,8 +244,16 @@ function updateBees() {
     //Uses a fixed update period
     let period = document.getElementById("periodTimer").value;
 
-    //Updates the timer for the next move
-    updateTimer = setTimeout('updateBees()', period);
+    let score = hits.innerHTML;
+
+    if(Number(score) < 1000) {
+        // Updates the movement of the bee after the interval specified
+        updateTimer = setTimeout('updateBees()', period);
+    } else {
+        score = "Game Over"
+        hits.innerHTML = score;
+        updateTimer = clearTimeout();
+    }
 }
 
 /* Methods to count the stings */
