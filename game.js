@@ -36,26 +36,29 @@ function Bear() {
         let w = parent.offsetWidth;
         let h = parent.offsetHeight;
 
+        /* Condition to prevent the bear from going
+           horizontally out of the bounds of the display */
         if(this.x < 0) this.x = 0;
         if(this.x > w - iw) this.x = w - iw;
 
+        /* Condition to prevent the bear from going
+           vertically out of the bounds of the display */
         if(this.y < 0) this.y = 0;
         if(this.y > h - ih) this.y = h - ih;
     };
 }
 
+// Starts the game
 function start() {
     //Creates bear
     bear = new Bear();
     
     //Add an event listener to the keypress event
     document.addEventListener("keydown", moveBear, false);
+    document.getElementById("speedBear").addEventListener("change", setSpeed);
 
-    //Creates a new array for bees
-    bees = new Array();
-
-    //Creates the bees
-    makeBees();
+    bees = new Array(); //Creates a new array for bees
+    makeBees(); //Creates the bees
 
     lastStingTime = new Date();
 }
@@ -91,13 +94,10 @@ function moveBear(e) {
      }
 }
 
-this.move = function(xDir, yDir) {
-    this.fitBounds(); // Instruction to keep the bear within the board
-    this.x += this.dBear * xDir;
-    this.y += this.dBear * yDir;
-    this.display();
-};
-
+function setSpeed() {
+    // Updates the bear's speed to the value in the input fields
+    bear.dBear = parseInt(document.getElementById("speedBear").value);
+}
 
 /* Adds the Bee Class */
 
