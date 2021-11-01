@@ -1,3 +1,7 @@
+var bear;
+var bees;
+var lastStingTime;
+
 function Bear() {
     this.dBear = 100; //The steps (in pixels) made by the bear from the user keyboard input (arrow keys)
     this.htmlElement = document.getElementById("bear");
@@ -172,7 +176,7 @@ function createBeeImg(wNum) {
     img.setAttribute("src", "images/bee.gif"); //Sets the source of the <img> tag
     img.setAttribute("width", "100"); //Sets the width of the <img> tag
     img.setAttribute("alt", "A bee!"); //Adds the alt text for the <img> tag
-    img.setAttribute("id", "bee" + wNum);
+    img.setAttribute("id", "bee" + wNum); // Adds an 'id' to the attribute
     img.setAttribute("class", "bee"); //set class of html tag <img>
 
     //Adds the <img> element to the DOM as a child of the 'board' <div>
@@ -258,6 +262,9 @@ function isHit(defender, offender) {
         let thisDuration = newStingTime - lastStingTime;
         lastStingTime = newStingTime;
         let longestDuration = Number(duration.innerHTML);
+
+        /* Condition to check that if there is no longestDuration
+           yet, to make the currentDuration the longest */
         if(longestDuration === 0) {
             longestDuration = thisDuration;
         } else {
@@ -291,5 +298,6 @@ function overlap(element1, element2) {
     if(intersectArea == 0 || isNaN(intersectArea)) {
         return false;
     }
+
     return true;
 }
