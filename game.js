@@ -265,11 +265,15 @@ function isHit(defender, offender) {
 
         /* Condition to check that if there is no longestDuration
            yet, to make the currentDuration the longest */
-        if(longestDuration === 0) {
+
+        // Condition to check if the longestDuration variable is 0 or a non-numeric value
+        if(longestDuration === 0 || isNaN(longestDuration)) {
             longestDuration = thisDuration;
         } else {
             if(longestDuration < thisDuration) longestDuration = thisDuration;
         }
+
+        //Updates the longest duration displayed on the site
         document.getElementById("duration").innerHTML = longestDuration;
     }
 }
