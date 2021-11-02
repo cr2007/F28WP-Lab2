@@ -19,4 +19,4 @@
 The lab involved developing a simple (single player) game without any server interaction.<br>
 The game involves two characters competing on the game board, where one character moves randomly, and the other one is controlled by the user through keyboard keys
 
-This lab concentrated on the client-side programming using <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, and JavaScript along with Objects, Arrays, and the <abbr title="Document Object Model"><b>DOM</b></abbr> API
+This lab concentrated on the client-side programming using HTML, CSS, and JavaScript along with Objects, Arrays, and the <b>DOM</b> API
