@@ -11,7 +11,9 @@
     <a href="https://www.git-scm.com">
         <img alt="Git" title="Version Control System" src="https://img.shields.io/badge/Git-informational?style=flat-sqaure&logo=git&logoColor=white&color=F05032">
     </a>
-    <img alt="Visual Studio Code" title="Text Editor" src="https://img.shields.io/badge/Visual%20Studio%20Code-informational?style=flat-sqaure&logo=visualstudiocode&logoColor=white&color=007ACC">
+    <a href="https://code.visualstudio.com/">
+        <img alt="Visual Studio Code" title="Text Editor" src="https://img.shields.io/badge/Visual%20Studio%20Code-informational?style=flat-sqaure&logo=visualstudiocode&logoColor=white&color=007ACC">
+    </a>
 </div>
 
 ### Lab 2: JavaScript with DOM API
