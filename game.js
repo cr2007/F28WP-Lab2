@@ -1,6 +1,3 @@
-var bear;
-var bees;
-var lastStingTime;
 
 function Bear() {
     this.dBear = 100; //The steps (in pixels) made by the bear from the user keyboard input (arrow keys)
@@ -59,9 +56,17 @@ function start() {
 
     bees = new Array(); //Creates a new array for bees
     makeBees(); //Creates the bees
-
-    lastStingTime = new Date();
+    updateBees();
 }
+
+// function restart() {
+//     score = 0;
+//     hits.innerHTML = score;
+//     duration.innerHTML = 0;
+//     updateTimer = clearTimeout();
+//     removeBees();
+//     start();
+// }
 
 /* Handles keyboard events
 *  to move the bear */
@@ -146,7 +151,7 @@ class Bee {
             let h = parent.offsetHeight;
 
             // Conditional Statement to prevent the bee from going below the minimum value of 'x'
-            if(this.x < 0) //Condition to check if the 'x' value goes below 0
+            if(this.x < 0) // Condition to check if the 'x' value goes below 0
                 this.x = 0; // Changes the value of 'x' back to 0
             
             // Conditional Statement to prevent the bear from going below the maximum value
@@ -221,12 +226,35 @@ function makeBees() {
     }
 }
 
+function addBee() {
+    // Gets the number of bees as mentioned in the user input
+    let nbBees = document.getElementById("nbBees").value;
+
+    // Converts the value within the variable to a Number
+    nbBees = Number(nbBees);
+    nbBees++;
+
+    var bee = new Bee(nbBees); // Creates a bee
+    bee.display(); // Displays the bee on screen
+    bees.push(bee); // Adds the bee to the bees array
+
+    document.getElementById("nbBees").value = nbBees;
+}
+
+// function removeBees() {
+//     beesArray = document.getElementsByClassName("bee");
+//     for (var e = 0; e<beesArray.length; e++) {
+//         beesArray[e].remove();
+//     }
+// }
+
 function moveBees() {
     //Get speed input field value
     let speed = document.getElementById("speedBees").value;
 
     //Move each bee to a random location
     for(let i = 0; i < bees.length; i++) {
+        // Moves the bees randomly in the x and y axis
         let dx = getRandomInt(2 * speed) - speed;
         let dy = getRandomInt(2 * speed) - speed;
 
