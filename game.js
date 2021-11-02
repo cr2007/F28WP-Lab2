@@ -278,6 +278,7 @@ function updateBees() {
         // Updates the movement of the bee after the interval specified
         updateTimer = setTimeout('updateBees()', period);
     } else {
+        alert("Game is over. You had " + score + " stings")
         score = "Game Over"
         hits.innerHTML = score;
         updateTimer = clearTimeout();
